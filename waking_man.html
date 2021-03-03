@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>
+        Character_walking
+    </title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: aqua;
+        }
+        
+        h1 {
+            font-weight: bold;
+            font-size: 45px;
+            color: #fff;
+            font-family: arial;
+            text-align: center;
+        }
+        
+        .man {
+            background: url(spritesheet-1440.png) no-repeat;
+            width: 180px;
+            height: 330px;
+            margin: auto;
+            animation: walk 1s steps(6) infinite;
+        }
+        
+        @keyframes walk {
+            0% {
+                background-position: 0px;
+            }
+            100% {
+                background-position: -1440px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>THE WALKING MAN</h1>
+    <div class="man"></div>
+</body>
+
+</html>
