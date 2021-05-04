@@ -4,10 +4,24 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<?php  
+session_start();
+if(!isset($_SESSION['user']))
+{
+	header("location:index.php");
+}
+else
+{
+	$name= $_SESSION['user'];
+    
+
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Glance Design Dashboard an Admin Panel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>admin panel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -15,35 +29,35 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 <!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="dashboard/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
 <!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="dashboard/css/style.css" rel='stylesheet' type='text/css' />
 
 <!-- font-awesome icons CSS -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="dashboard/css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons CSS-->
 
 <!-- side nav css file -->
-<link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css'/>
+<link href='dashboard/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css'/>
 <!-- //side nav css file -->
  
  <!-- js-->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<script src="dashboard/js/jquery-1.11.1.min.js"></script>
+<script src="dashboard/js/modernizr.custom.js"></script>
 
 <!--webfonts-->
 <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 <!--//webfonts--> 
 
 <!-- chart -->
-<script src="js/Chart.js"></script>
+<script src="dashboard/js/Chart.js"></script>
 <!-- //chart -->
 
 <!-- Metis Menu -->
-<script src="js/metisMenu.min.js"></script>
-<script src="js/custom.js"></script>
-<link href="css/custom.css" rel="stylesheet">
+<script src="dashboard/js/metisMenu.min.js"></script>
+<script src="dashboardjs/custom.js"></script>
+<link href="dashboard/css/custom.css" rel="stylesheet">
 <!--//Metis Menu -->
 <style>
 #chartdiv {
@@ -121,87 +135,104 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span> Glance<span class="dashboard_text">Design dashboard</span></a></h1>
+            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span>Admin<span class="dashboard_text">Dashboard</span></a></h1>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="sidebar-menu">
               <li class="header">MAIN NAVIGATION</li>
               <li class="treeview">
-                <a href="index.html">
+                <a href="http://localhost/phpmyadmin/db_structure.php?server=1&db=project">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>
-			  <li class="treeview">
+			  
+              <li class="treeview">
                 <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Components</span>
+                <i class='fa fa-group'></i> <span>User Registration</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="grids.html"><i class="fa fa-angle-right"></i> Grids</a></li>
-                  <li><a href="media.html"><i class="fa fa-angle-right"></i> Media Css</a></li>
-                </ul>
-              </li>
-              <li class="treeview">
-                <a href="charts.html">
-                <i class="fa fa-pie-chart"></i>
-                <span>Charts</span>
-                <span class="label label-primary pull-right">new</span>
-                </a>
-              </li>
-              <li class="treeview">
-              <li class="treeview">
-                <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>UI Elements</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="general.html"><i class="fa fa-angle-right"></i> General</a></li>
-                  <li><a href="icons.html"><i class="fa fa-angle-right"></i> Icons</a></li>
-                  <li><a href="buttons.html"><i class="fa fa-angle-right"></i> Buttons</a></li>
-                  <li><a href="typography.html"><i class="fa fa-angle-right"></i> Typography</a></li>
-                </ul>
-              </li>
-			  <li>
-                <a href="widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span>
-                <small class="label pull-right label-info">08</small>
-                </a>
-              </li>
-              <li class="treeview">
-                <a href="#">
-                <i class="fa fa-edit"></i> <span>Registration</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i>Insert</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> Delete</a></li>
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i>Update</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> View</a></li>
+                  <li><a href="insrt_registration.php" target="abc"><i class="fa fa-pencil-square-o"></i>Insert</a></li>
+                  <li><a href="view_registr.php" target="abc"><i class='fa fa-eye'></i> View</a></li>
                 </ul>
                 <li class="treeview">
                 <a href="#">
-                <i class="fa fa-edit"></i> <span>Query</span>
+                <i class="fa fa-question"></i> <span>Queries</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i>Insert</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> Delete</a></li>
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i>Update</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> View</a></li>
+                  
+                  
+                  
+                <li><a href="view_query.php" target="abc"><i class="fa fa-eye"></i> View</a></li>
+				</ul>
+              </li>
+<!--li class="treeview">
+                <a href="#">
+                <i class="fa fa-question"></i> <span>Booking</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  
+                  
+                  
+                <li><a href="tables/view_booking.php" target="abc"><i class="fa fa-eye"></i> View</a></li>
+				</ul>
+              </li>
+   <li class="treeview">
+                <a href="#">
+                <i class="fa fa-question"></i> <span>Cart</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  
+                  
+                  
+                <li><a href="tables/view_cart.php" target="abc"><i class="fa fa-eye"></i> View</a></li>
+				</ul>
+              </li-->
+              
+				<li class="treeview">
+                <a href="#">
+                <i class="fa fa-cog"></i> <span>Services</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+				<ul class="treeview-menu">
+                  <li><a href="insrt_srv_catg.php" target="abc"><i class="fa fa-pencil-square-o"></i>Insert</a></li>
+                  <li><a href="view_srv_catg.php" target="abc"><i class="fa fa-eye"></i> View</a></li>
+                </ul>
+				<li class="treeview">
+                <a href="#">
+                <i class="fa fa-cogs"></i> <span>Services Details</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+				<ul class="treeview-menu">
+                  <li><a href="insrt_srv_detail.php" target="abc"><i class="fa fa-pencil-square-o"></i>Insert</a></li>
+                  <li><a href="view_srv_detail.php" target="abc"><i class="fa fa-eye"></i> View</a></li>
                 </ul>
               </li>
               <li class="treeview">
                 <a href="#">
-                <i class="fa fa-edit"></i> <span>Admin</span>
+                <i class="fa fa-user-plus"></i> <span>Services_Request &nbsp;<span class="badge">
+
+<?php
+include("tables/db_connect.php");
+$x="select count(sno) from srv_approval";
+$y=mysqli_query($con,$x);
+
+while($c=mysqli_fetch_array($y))
+{
+    
+    echo $c[0];
+    
+}
+?>
+</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu">
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i>Insert</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> Delete</a></li>
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i>Update</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> View</a></li>
+				<ul class="treeview-menu">
+                  
+                  <li><a href="view_srv_req.php" target="abc"><i class="fa fa-eye"></i> View</a></li>
                 </ul>
               </li>
               <li class="header">LABELS</li>
@@ -225,7 +256,20 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-question" style="color:white;"></i><span class="badge">
+<?php
+include("tables/db_connect.php");
+$x="select count(sno) from query";
+$y=mysqli_query($con,$x);
+
+while($c=mysqli_fetch_array($y))
+{
+    
+    echo $c[0];
+    
+}
+?>
+</span></a>
 							<ul class="dropdown-menu">
 								<li>
 									<div class="notification_header">
@@ -272,7 +316,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							</ul>
 						</li>
 						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">4</span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-group" style="color:white;"></i><span class="badge blue"><?php
+include("tables/db_connect.php");
+$x="select count(sno) from registration";
+$y=mysqli_query($con,$x);
+
+while($c=mysqli_fetch_array($y))
+{
+    
+    echo $c[0];
+    
+}
+?></span></a>
 							<ul class="dropdown-menu">
 								<li>
 									<div class="notification_header">
@@ -393,11 +448,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<div class="profile_details">		
 					<ul>
 						<li class="dropdown profile_details_drop">
-							<a href="chng_pw.php">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<div class="profile_img">	
-									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
+									<span class="prfil-img"><img src="images/admins.jpg" height="50" width="50" alt=""> </span> 
 									<div class="user-name">
-										<p>Admin Name</p>
+										<p><?php echo $name; ?></p>
 										<span>Administrator</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
@@ -406,10 +461,10 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								</div>	
 							</a>
 							<ul class="dropdown-menu drp-mnu">
-								<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
+								<li> <a href="chng_pw.php"><i class="fa fa-cog"></i> Change Password</a> </li> 
 								<li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li> 
 								<li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li> 
-								<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+								<li> <a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>
 					</ul>
@@ -420,7 +475,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
-        <iframe name="abc" height="00" width="500"></iframe>
+        
 		<div id="page-wrapper">
 			<div class="main-page">
 			<div class="col_3">
@@ -428,17 +483,37 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-dollar icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>$452</strong></h5>
-                      <span>Total Revenue</span>
+                      <h5><strong>
+                          <?php include("tables/db_connect.php");
+                          $q="select * from total_visitor";
+                          $f=mysqli_query($con,$q);
+                          $count=mysqli_num_rows($f);
+                          echo $count;
+                          ?>
+                      </strong></h5>
+                      <span>Total Visitors
+</span>
                     </div>
                 </div>
         	</div>
         	<div class="col-md-3 widget widget1">
         		<div class="r3_counter_box">
-                    <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
+                    <i class="pull-left fa fa-cog user1 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>$1019</strong></h5>
-                      <span>Online Revenue</span>
+                      <h5><strong><?php 
+                      include("tables/db_connect.php");
+                      $x="select count(sno) from services";
+                      $y=mysqli_query($con,$x);
+                      
+                      while($c=mysqli_fetch_array($y))
+                      {
+                          
+                          echo $c[0];
+                          
+                      }
+                      
+                      ?></strong></h5>
+                      <span>Total Services</span>
                     </div>
                 </div>
         	</div>
@@ -446,12 +521,22 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-money user2 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>$1012</strong></h5>
-                      <span>Expenses</span>
+                      <h5><strong><?php 
+                      include("tables/db_connect.php");
+                      $x="select count(sno) from subscribers";
+                      $y=mysqli_query($con,$x);
+                      
+                      while($c=mysqli_fetch_array($y))
+                      {
+                          
+                          echo $c[0];
+                          
+                      }?></strong></h5>
+                      <span>Total Subscribers</span>
                     </div>
                 </div>
         	</div>
-        	<div class="col-md-3 widget widget1">
+        	<!--div class="col-md-3 widget widget1">
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
                     <div class="stats">
@@ -459,358 +544,33 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                       <span>Expenditure</span>
                     </div>
                 </div>
-        	 </div>
+        	 </div-->
         	<div class="col-md-3 widget">
         		<div class="r3_counter_box">
                     <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>1450</strong></h5>
+                      <h5><strong><?php 
+                      include("tables/db_connect.php");
+                      $x="select count(sno) from registration";
+                      $y=mysqli_query($con,$x);
+                      
+                      while($c=mysqli_fetch_array($y))
+                      {
+                          
+                          echo $c[0];
+                          
+                      }
+                      
+                      ?></strong></h5>
                       <span>Total Users</span>
                     </div>
                 </div>
         	 </div>
         	<div class="clearfix"> </div>
-		</div>
-		
-		<div class="row-one widgettable">
-			<div class="col-md-7 content-top-2 card">
-				<div class="agileinfo-cdr">
-					<div class="card-header">
-                        <h3>Weekly Sales</h3>
-                    </div>
-					
-						<div id="Linegraph" style="width: 98%; height: 350px">
-						</div>
-						
-				</div>
-			</div>
-			<div class="col-md-3 stat">
-				<div class="content-top-1">
-				<div class="col-md-6 top-content">
-					<h5>Sales</h5>
-					<label>1283+</label>
-				</div>
-				<div class="col-md-6 top-content1">	   
-					<div id="demo-pie-1" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
-				</div>
-				 <div class="clearfix"> </div>
-				</div>
-				<div class="content-top-1">
-				<div class="col-md-6 top-content">
-					<h5>Reviews</h5>
-					<label>2262+</label>
-				</div>
-				<div class="col-md-6 top-content1">	   
-					<div id="demo-pie-2" class="pie-title-center" data-percent="75"> <span class="pie-value"></span> </div>
-				</div>
-				 <div class="clearfix"> </div>
-				</div>
-				<div class="content-top-1">
-				<div class="col-md-6 top-content">
-					<h5>Visitors</h5>
-					<label>12589+</label>
-				</div>
-				<div class="col-md-6 top-content1">	   
-					<div id="demo-pie-3" class="pie-title-center" data-percent="90"> <span class="pie-value"></span> </div>
-				</div>
-				 <div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-2 stat">
-				<div class="content-top">
-					<div class="top-content facebook">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-					</div>
-					<ul class="info">
-						<li class="col-md-6"><b>1,296</b><p>Friends</p></li>
-						<li class="col-md-6"><b>647</b><p>Likes</p></li>
-						<div class="clearfix"></div>
-					</ul>
-				</div>
-				<div class="content-top">
-					<div class="top-content twitter">
-						<a href="#"><i class="fa fa-twitter"></i></a>
-					</div>
-					<ul class="info">
-						<li class="col-md-6"><b>1,997</b><p>Followers</p></li>
-						<li class="col-md-6"><b>389</b><p>Tweets</p></li>
-						<div class="clearfix"></div>
-					</ul>
-				</div>
-				<div class="content-top">
-					<div class="top-content google-plus">
-						<a href="#"><i class="fa fa-google-plus"></i></a>
-					</div>
-					<ul class="info">
-						<li class="col-md-6"><b>1,216</b><p>Followers</p></li>
-						<li class="col-md-6"><b>321</b><p>shares</p></li>
-						<div class="clearfix"></div>
-					</ul>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-				
-				<div class="charts">
-					<div class="col-md-4 charts-grids widget">
-						<div class="card-header">
-							<h3>Bar chart</h3>
-						</div>
-						
-						<div id="container" style="width: 100%; height:270px;">
-							<canvas id="canvas"></canvas>
-						</div>
-						<button id="randomizeData">Randomize Data</button>
-						<button id="addDataset">Add Dataset</button>
-						<button id="removeDataset">Remove Dataset</button>
-						<button id="addData">Add Data</button>
-						<button id="removeData">Remove Data</button>
-						
-					</div>
-					
-					<div class="col-md-4 charts-grids widget states-mdl">
-						<div class="card-header">
-							<h3>Column & Line Graph</h3>
-						</div>
-						<div id="chartdiv"></div>
-					</div>
-			
-					<div class="clearfix"> </div>
-				</div>
-				
-	
-	<!-- for amcharts js -->
-			<script src="js/amcharts.js"></script>
-			<script src="js/serial.js"></script>
-			<script src="js/export.min.js"></script>
-			<link rel="stylesheet" href="css/export.css" type="text/css" media="all" />
-			<script src="js/light.js"></script>
-	<!-- for amcharts js -->
-
-    <script  src="js/index1.js"></script>
-	
-		<div class="charts">		
-			<div class="mid-content-top charts-grids">
-				<div class="middle-content">
-						<h4 class="title">Carousel Slider</h4>
-					<!-- start content_slider -->
-					<div id="owl-demo" class="owl-carousel text-center">
-						<div class="item">
-							<img class="lazyOwl img-responsive" data-src="images/slider1.jpg" alt="name">
-						</div>
-						<div class="item">
-							<img class="lazyOwl img-responsive" data-src="images/slider2.jpg" alt="name">
-						</div>
-						<div class="item">
-							<img class="lazyOwl img-responsive" data-src="images/slider3.jpg" alt="name">
-						</div>
-						<div class="item">
-							<img class="lazyOwl img-responsive" data-src="images/slider4.jpg" alt="name">
-						</div>
-						<div class="item">
-							<img class="lazyOwl img-responsive" data-src="images/slider5.jpg" alt="name">
-						</div>
-						<div class="item">
-							<img class="lazyOwl img-responsive" data-src="images/slider6.jpg" alt="name">
-						</div>
-						<div class="item">
-							<img class="lazyOwl img-responsive" data-src="images/slider7.jpg" alt="name">
-						</div>
-						
-					</div>
-				</div>
-					<!--//sreen-gallery-cursual---->
-			</div>
-		</div>
-		
-		<div class="col_1">
-			<div class="col-md-4 span_8">
-				<div class="activity_box">
-					<h2>Inbox</h2>
-					<div class="scrollbar" id="style-1">
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Michael Chris</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:05 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Alexander</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:06 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Daniel Lucas</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>01:30 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/2.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Jackson Jacob</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>01:50 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">David Samuel</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:20 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">laura Smith</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:50 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<form action="#" method="post">
-						<input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
-						<input type="submit" value="Submit"/>		
-					</form>
-				</div>
-			</div>
-			<div class="col-md-4 span_8">
-				<div class="activity_box activity_box1">
-					<h3>chat</h3>
-					<div class="scrollbar" id="style-3">
-						<div class="activity-row activity-row1">
-							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/><span>06:01 AM</span></div>
-							<div class="col-xs-5 activity-img1">
-								<div class="activity-desc-sub">
-									<h5>Michael Chris</h5>
-									<p>Hello ! this is Michael chris</p>
-								</div>
-							</div>
-							<div class="col-xs-4 activity-desc1"></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row activity-row1">
-							<div class="col-xs-2 activity-desc1"></div>
-							<div class="col-xs-7 activity-img2">
-								<div class="activity-desc-sub1">
-									<h5>Alexander</h5>
-									<p>Hi,How are you ? What about our next meeting?</p>
-								</div>
-							</div>
-							<div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt=""/><span>06:02 AM</span></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row activity-row1">
-							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/><span>06:05 AM</span></div>
-							<div class="col-xs-5 activity-img1">
-								<div class="activity-desc-sub">
-									<h5>Michael Chris</h5>
-									<p>Yeah fine, Hope you the same</p>
-								</div>
-							</div>
-							<div class="col-xs-4 activity-desc1"></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row activity-row1">
-							<div class="col-xs-2 activity-desc1"></div>
-							<div class="col-xs-7 activity-img2">
-								<div class="activity-desc-sub1">
-									<h5>Alexander</h5>
-									<p>Wow that's great</p>
-								</div>
-							</div>
-							<div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt=""/><span>06:20 PM</span></div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<form action="#" method="post">
-						<input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
-						<input type="submit" value="Send"/>		
-					</form>
-				</div>
-			</div>
-			<div class="col-md-4 span_8">
-				<div class="activity_box activity_box2">
-					<h3>todo</h3>
-					<div class="scrollbar" id="style-2">
-						<div class="activity-row activity-row1">
-							<div class="single-bottom">
-								<ul>
-									<li>
-										<input type="checkbox"  id="brand" value="">
-										<label for="brand"><span></span> Integer sollicitudin lacinia condimentum.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand1" value="">
-										<label for="brand1"><span></span> ligula sit amet hendrerit init lorem.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand2" value="">
-										<label for="brand2"><span></span>  Donec aliquam dolor eu augue condimentum.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand9" value="">
-										<label for="brand9"><span></span>  at tristique Pain that produces no resultant.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand8" value="">
-										<label for="brand8"><span></span> Nulla finibus rhoncus turpis quis tristique.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand7" value="">
-										<label for="brand7"><span></span> Cupidatat non proident Praising pain.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand3" value="">
-										<label for="brand3"><span></span>  libero vel elementum euismod, mauris tellus</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand4" value="">
-										<label for="brand4"><span></span> Donec aliquam dolor eu augue condimentum.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand5" value="">
-										<label for="brand5"><span></span> Orci varius natoque penatibus et magnis dis.</label>
-									</li>
-									<li>
-										<input type="checkbox"  id="brand6" value="">
-										<label for="brand6"><span></span> parturient Dolorem ipsum quia.</label>
-									</li>
-									
-									
-								</ul>
-							</div>
-						</div>
-					</div>
-					<form action="#" method="post">
-						<input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
-						<input type="submit" value="Submit"/>		
-					</form>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="clearfix"> </div>
-			
-		</div>
-				
-			</div>
-		</div>
+		</div><br>
+		<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item"  name="abc"></iframe>
+</div>
 	<!--footer-->
 	<div class="footer">
 	   <p>&copy; 2018 Glance Design Dashboard. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>		
